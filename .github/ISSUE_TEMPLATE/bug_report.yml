@@ -1,0 +1,73 @@
+name: Bug report
+description: Something does not work as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing! Please fill in as much as you can. Check the guides in `docs/` first (bring-up guide, troubleshooting table).
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: Tuner hardware
+      description: Mainly tested is the MiniTiouner Express on a Raspberry Pi 4B.
+      options:
+        - MiniTiouner Express
+        - MiniTiouner Pro
+        - MiniTiouner V2 / other
+        - Other (please describe below)
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Computer running Longmynd
+      options:
+        - Raspberry Pi 4B (64-bit OS)
+        - Raspberry Pi (32-bit OS)
+        - Other Linux (please describe below)
+    validations:
+      required: true
+  - type: dropdown
+    id: client
+    attributes:
+      label: Client
+      description: What controls Longmynd and shows the video?
+      options:
+        - Longmynd Client (ZR6TG)
+        - OpenTuner
+        - Web UI only
+        - Command line only
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Longmynd version
+      description: Output of `git log --oneline -1` in the longmynd folder.
+      placeholder: "e.g. 17e92de Merge PR #2 from dl1rf: json_object_new_int in web.c"
+    validations:
+      required: true
+  - type: input
+    id: signal
+    attributes:
+      label: Signal parameters
+      description: Receive frequency, LO of the LNB, symbol rate and modulation, if relevant.
+      placeholder: "e.g. 10491.5 MHz, LO 9360 MHz, 1500 kS, DVB-S2 QPSK 4/5"
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. ...\n2. ..."
+  - type: textarea
+    id: extra
+    attributes:
+      label: Logs and screenshots
+      description: For example `journalctl -u longmynd -n 50 --no-pager` and the client debug log. You can drag files into this field.

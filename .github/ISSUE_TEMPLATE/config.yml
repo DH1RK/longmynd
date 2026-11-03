@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Problem in the original Longmynd (philcrump/longmynd)
+    url: https://github.com/philcrump/longmynd
+    about: Issues that also occur in the original version belong in the original repository.
