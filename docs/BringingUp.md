@@ -31,6 +31,14 @@ Belege aus den Tests: Der Client belegt nur UDP 4003, nicht 4002
 `"type": "status"` in seinem Debug-Log (Monitor-WebSocket). Für andere
 Programme habe ich den UDP-Status nicht geprüft.
 
+Auch OpenTuner holt den Status laut Quellcode nicht per UDP, sondern über
+zwei WebSockets (`monitor` und `control`) auf Port 8080. Über UDP kommt dort
+nur das Video. Der Status-Ausgang von Longmynd (FIFO oder `-I`) muss deshalb
+nur **eingestellt** sein, damit Longmynd startet, ein Leser ist nicht nötig.
+Das Format dieser Ausgabe steht in [README_Longmynd.md](README_Longmynd.md),
+Abschnitt „Status Output Interface". Es ist für andere Software gedacht, die
+den Status selbst ausliest.
+
 Das Video-Ziel richtet der Client beim Verbinden selbst ein
 (Befehl `U<IP>:<Port>`). Deshalb stören die `127.0.0.1`-Startwerte im
 Dienst nicht.
