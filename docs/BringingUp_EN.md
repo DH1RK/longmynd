@@ -83,9 +83,16 @@ video and spectrum):
 ![Tuner area in the Longmynd Client](Screenshots/NotFunctionalLNB_MinitiounerPro.png)
 
 The *Tuner* area of the client contains *Port 0 / Port 1*, *Enable LNB Power*
-and *Horizontal Polarization*. The picture is filed as "not functional with
-the MiniTiouner" (file name `NotFunctionalLNB_MinitiounerPro.png`), the exact
-statement still has to be confirmed and added.
+and *Horizontal Polarization*.
+
+**Limitation with the MiniTiouner Pro:** *Port 1* and *Enable LNB Power* do
+not work in the Longmynd Client (ZR6TG) version 2022/11/26. It was not
+possible to switch between LNB A and LNB B. Probably this client version
+supports only one MiniTiouner with one LNB. This is an assumption, the source
+code of the client is not available.
+
+There is no remedy in the client. For two LNBs or several tuners use
+OpenTuner (section 4).
 
 ## 4. OpenTuner
 
